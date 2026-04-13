@@ -1,0 +1,140 @@
+/* ============================================================
+   Utility Classes — TaskBoard by MAO Systems
+   Based on Design Tokens
+   ============================================================ */
+
+/* ── Flexbox ─────────────────────────────────────────────── */
+.flex          { display: flex; }
+.flex-col      { flex-direction: column; }
+.flex-row      { flex-direction: row; }
+.flex-wrap     { flex-wrap: wrap; }
+.flex-1        { flex: 1; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+.items-center  { align-items: center; }
+.items-start   { align-items: flex-start; }
+.items-end     { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+
+.justify-center  { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end     { justify-content: flex-end; }
+.justify-start   { justify-content: flex-start; }
+
+/* ── Gap ─────────────────────────────────────────────────── */
+.gap-1  { gap: var(--spacing-1); }
+.gap-2  { gap: var(--spacing-2); }
+.gap-3  { gap: var(--spacing-3); }
+.gap-4  { gap: var(--spacing-4); }
+.gap-6  { gap: var(--spacing-6); }
+.gap-8  { gap: var(--spacing-8); }
+
+/* ── Padding ─────────────────────────────────────────────── */
+.p-1  { padding: var(--spacing-1); }
+.p-2  { padding: var(--spacing-2); }
+.p-3  { padding: var(--spacing-3); }
+.p-4  { padding: var(--spacing-4); }
+.p-6  { padding: var(--spacing-6); }
+.p-8  { padding: var(--spacing-8); }
+
+.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.px-3 { padding-left: var(--spacing-3); padding-right: var(--spacing-3); }
+.px-4 { padding-left: var(--spacing-4); padding-right: var(--spacing-4); }
+.px-6 { padding-left: var(--spacing-6); padding-right: var(--spacing-6); }
+
+.py-2 { padding-top: var(--spacing-2); padding-bottom: var(--spacing-2); }
+.py-3 { padding-top: var(--spacing-3); padding-bottom: var(--spacing-3); }
+.py-4 { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
+
+/* ── Margin ──────────────────────────────────────────────── */
+.m-auto { margin: auto; }
+.mt-2   { margin-top: var(--spacing-2); }
+.mt-4   { margin-top: var(--spacing-4); }
+.mt-6   { margin-top: var(--spacing-6); }
+.mb-2   { margin-bottom: var(--spacing-2); }
+.mb-4   { margin-bottom: var(--spacing-4); }
+.ml-auto { margin-left: auto; }
+
+/* ── Typography ──────────────────────────────────────────── */
+.text-xs   { font-size: var(--font-size-xs); }
+.text-sm   { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg   { font-size: var(--font-size-lg); }
+.text-xl   { font-size: var(--font-size-xl); }
+.text-2xl  { font-size: var(--font-size-2xl); }
+.text-3xl  { font-size: var(--font-size-3xl); }
+
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium  { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold    { font-weight: var(--font-weight-bold); }
+
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.truncate    { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Colors ──────────────────────────────────────────────── */
+.text-primary   { color: var(--color-primary-600); }
+.text-muted     { color: var(--color-neutral-500); }
+.text-dark      { color: var(--color-neutral-900); }
+.text-light     { color: var(--color-neutral-50); }
+.text-success   { color: var(--color-success-600); }
+.text-warning   { color: var(--color-warning-600); }
+.text-danger    { color: var(--color-danger-600); }
+
+/* ── Backgrounds ─────────────────────────────────────────── */
+.bg-white   { background-color: var(--color-white); }
+.bg-board   { background-color: var(--color-bg-board); }
+.bg-card    { background-color: var(--color-bg-card); }
+.bg-sidebar { background-color: var(--color-bg-sidebar); }
+
+/* ── Borders ─────────────────────────────────────────────── */
+.border     { border: 1px solid var(--color-neutral-200); }
+.border-b   { border-bottom: 1px solid var(--color-neutral-200); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ── Shadows ─────────────────────────────────────────────── */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+/* ── Layout ──────────────────────────────────────────────── */
+.w-full    { width: 100%; }
+.h-full    { height: 100%; }
+.h-screen  { height: 100vh; }
+.min-h-screen { min-height: 100vh; }
+.overflow-hidden  { overflow: hidden; }
+.overflow-x-auto  { overflow-x: auto; }
+.overflow-y-auto  { overflow-y: auto; }
+.relative  { position: relative; }
+.absolute  { position: absolute; }
+.fixed     { position: fixed; }
+.inset-0   { top: 0; right: 0; bottom: 0; left: 0; }
+
+/* ── Transitions ─────────────────────────────────────────── */
+.transition-fast { transition: all var(--transition-fast); }
+.transition-base { transition: all var(--transition-base); }
+.transition-slow { transition: all var(--transition-slow); }
+
+/* ── Visibility ──────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

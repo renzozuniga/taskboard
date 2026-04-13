@@ -1,0 +1,24 @@
+/* ============================================================
+   TaskBoard — Global Styles Entry Point
+   MAO Systems | 2026
+   ============================================================
+
+   Import order matters:
+   1. Tokens (CSS variables)
+   2. Reset (normalize browser defaults)
+   3. Utilities (helper classes)
+
+   Component styles are scoped via Angular's ViewEncapsulation
+   ============================================================ */
+
+/* Google Fonts — Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Design Tokens */
+@import 'styles/tokens.css';
+
+/* Reset & Base */
+@import 'styles/reset.css';
+
+/* Utility Classes */
+@import 'styles/utilities.css';
