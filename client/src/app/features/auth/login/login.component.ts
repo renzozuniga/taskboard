@@ -36,6 +36,25 @@ import { AuthService } from '../../../core/services/auth.service';
         <h2 class="auth-card__title">Sign in to your account</h2>
         <p class="auth-card__subtitle">Welcome back! Enter your details below.</p>
 
+        <!-- Demo account hint -->
+        <div class="demo-hint">
+          <div class="demo-hint__header">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <circle cx="7" cy="4.5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M1.5 13c0-3.038 2.462-5.5 5.5-5.5s5.5 2.462 5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Want to explore first? Use the demo account.</span>
+          </div>
+          <div class="demo-hint__credentials">
+            <span class="demo-hint__field">demo&#64;taskboard.com</span>
+            <span class="demo-hint__sep">·</span>
+            <span class="demo-hint__field">Demo123456</span>
+          </div>
+          <button type="button" class="demo-hint__btn" (click)="useDemoAccount()">
+            Fill credentials →
+          </button>
+        </div>
+
         <!-- API error banner -->
         <div *ngIf="apiError" class="auth-error">{{ apiError }}</div>
 
@@ -109,6 +128,16 @@ export class LoginComponent {
     if (ctrl.hasError('required')) return 'Password is required.';
     if (ctrl.hasError('minlength')) return 'Password must be at least 6 characters.';
     return '';
+  }
+
+  /**
+   * Fills the login form with demo account credentials.
+   */
+  useDemoAccount(): void {
+    this.loginForm.patchValue({
+      email: 'demo@taskboard.com',
+      password: 'Demo123456'
+    });
   }
 
   onSubmit(): void {

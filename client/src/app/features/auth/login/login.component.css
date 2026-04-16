@@ -50,7 +50,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-neutral-500);
   text-align: center;
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--spacing-4);
 }
 
 /* ── Form ────────────────────────────────────────────────── */
@@ -89,6 +89,58 @@
 }
 
 .auth-form__forgot:hover {
+  text-decoration: underline;
+}
+
+/* ── Demo Account Hint ───────────────────────────────────── */
+.demo-hint {
+  width: 100%;
+  background-color: var(--color-primary-50);
+  border: 1px solid var(--color-primary-100);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.demo-hint__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-700);
+}
+
+.demo-hint__credentials {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-mono);
+  color: var(--color-neutral-700);
+}
+
+.demo-hint__sep {
+  color: var(--color-neutral-300);
+}
+
+.demo-hint__btn {
+  align-self: flex-start;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-600);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.demo-hint__btn:hover {
+  color: var(--color-primary-700);
   text-decoration: underline;
 }
 
