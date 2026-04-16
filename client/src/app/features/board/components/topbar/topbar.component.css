@@ -1,0 +1,115 @@
+/* ── TopBar Component ─────────────────────────────────────
+   Mapped from Figma: Components / Organisms / Top Bar
+   Height: 56px | bg: white | border-bottom
+   ──────────────────────────────────────────────────────── */
+
+.topbar {
+  height: var(--topbar-height);
+  background-color: var(--color-bg-topbar);
+  border-bottom: 1px solid var(--color-neutral-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-6);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+/* ── Left ────────────────────────────────────────────────── */
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.topbar__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+}
+
+/* ── Center (Search) ─────────────────────────────────────── */
+.topbar__center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.topbar__search {
+  position: relative;
+  width: 100%;
+}
+
+.topbar__search-icon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-neutral-500);
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.topbar__search--active .topbar__search-icon {
+  color: var(--color-primary-600);
+}
+
+.topbar__search-input {
+  width: 100%;
+  height: var(--btn-height-default);
+  padding: var(--spacing-2) 2.25rem var(--spacing-2) 2.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-100);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.topbar__search-input::placeholder {
+  color: var(--color-neutral-500);
+}
+
+.topbar__search-input:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-primary-600);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.topbar__search--active .topbar__search-input {
+  background-color: var(--color-white);
+  border-color: var(--color-neutral-300);
+}
+
+/* Clear (×) button */
+.topbar__search-clear {
+  position: absolute;
+  right: var(--spacing-2);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-neutral-500);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.topbar__search-clear:hover {
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-700);
+}
+
+/* ── Right ───────────────────────────────────────────────── */
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+

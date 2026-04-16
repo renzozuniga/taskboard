@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/asusm/Documents/Claude/Projects/MAO/taskboard/**)",
+      "Bash(mv taskboard-backend *)",
+      "Bash(mv taskboard-frontend *)"
+    ]
+  }
+}

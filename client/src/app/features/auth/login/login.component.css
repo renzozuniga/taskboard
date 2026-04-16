@@ -1,0 +1,121 @@
+/* ── Login Page ───────────────────────────────────────────
+   Mapped from Figma: Desktop Screens / Login Screen
+   Centered card layout on neutral background
+   ──────────────────────────────────────────────────────── */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-board);
+  padding: var(--spacing-4);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 25rem;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.auth-card__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+}
+
+.auth-card__brand {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+}
+
+.auth-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  text-align: center;
+  margin-bottom: var(--spacing-1);
+}
+
+.auth-card__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+}
+
+/* ── Form ────────────────────────────────────────────────── */
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.auth-form__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.auth-form__remember {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  cursor: pointer;
+}
+
+.auth-form__remember input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary-600);
+}
+
+.auth-form__forgot {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-600);
+  text-decoration: none;
+}
+
+.auth-form__forgot:hover {
+  text-decoration: underline;
+}
+
+/* ── API Error Banner ────────────────────────────────────── */
+.auth-error {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: var(--color-danger-100);
+  color: var(--color-danger-600);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-2);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.auth-card__footer {
+  margin-top: var(--spacing-6);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+}
+
+.auth-card__link {
+  color: var(--color-primary-600);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.auth-card__link:hover {
+  text-decoration: underline;
+}

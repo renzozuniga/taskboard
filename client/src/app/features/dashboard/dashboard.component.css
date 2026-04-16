@@ -1,0 +1,235 @@
+/* ── Dashboard Layout ─────────────────────────────────────
+   Mapped from Figma: Desktop Screens / Dashboard
+   ──────────────────────────────────────────────────────── */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Content ─────────────────────────────────────────────── */
+.dashboard-content {
+  padding: var(--spacing-8);
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-6);
+}
+
+.dashboard-header__left {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-3);
+}
+
+.dashboard-header__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+}
+
+.dashboard-header__count {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+}
+
+/* ── Search empty state ─────────────────────────────────── */
+.dashboard-empty {
+  padding: var(--spacing-16) 0;
+  text-align: center;
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-sm);
+}
+
+/* ── Loading ─────────────────────────────────────────────── */
+.dashboard-loading {
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-8) 0;
+}
+
+/* ── Boards Grid ─────────────────────────────────────────── */
+.boards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  gap: var(--spacing-6);
+}
+
+/* ── Board Card ──────────────────────────────────────────── */
+.board-card {
+  position: relative;
+  height: 10rem;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.board-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Card Header ─────────────────────────────────────────── */
+.board-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+}
+
+.board-card__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+}
+
+/* ── Card Action Buttons (edit / delete) ─────────────────── */
+.board-card__actions {
+  display: flex;
+  gap: var(--spacing-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.board-card:hover .board-card__actions {
+  opacity: 1;
+}
+
+.board-card__action-btn {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.board-card__action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.board-card__action-btn--danger:hover {
+  background-color: rgba(220, 38, 38, 0.55);
+}
+
+/* ── Card Footer (owner) ─────────────────────────────────── */
+.board-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.board-card__owner-name {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── New Board Card ──────────────────────────────────────── */
+.board-card--new {
+  background-color: var(--color-neutral-100);
+  border: 2px dashed var(--color-neutral-300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  color: var(--color-neutral-500);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  box-shadow: none;
+}
+
+.board-card--new:hover {
+  background-color: var(--color-neutral-200);
+  border-color: var(--color-neutral-500);
+  color: var(--color-neutral-700);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Modal Form ──────────────────────────────────────────── */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.modal-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.modal-form__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-700);
+}
+
+.modal-form__optional {
+  font-weight: var(--font-weight-regular);
+  color: var(--color-neutral-500);
+}
+
+.modal-form__textarea {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-900);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+}
+
+.modal-form__textarea:focus {
+  border-color: var(--color-primary-600);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.modal-form__textarea::placeholder {
+  color: var(--color-neutral-500);
+}
+
+/* ── Delete Confirmation ─────────────────────────────────── */
+.delete-confirm__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-700);
+  line-height: var(--line-height-normal);
+}
+
+.delete-confirm__text strong {
+  color: var(--color-neutral-900);
+  font-weight: var(--font-weight-semibold);
+}

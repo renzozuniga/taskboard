@@ -1,0 +1,144 @@
+/* ── Task Card Component ──────────────────────────────────
+   Mapped from Figma: Components / Molecules / Task Card
+   Width: 272px | bg: white | radius: 8px
+   ──────────────────────────────────────────────────────── */
+
+.task-card {
+  width: var(--card-width);
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: var(--spacing-3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Drag states (applied by Angular CDK) */
+:host-context(.cdk-drag-preview) .task-card {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18), 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: rotate(1.5deg) scale(1.02);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+:host-context(.cdk-drag-placeholder) .task-card {
+  opacity: 0;
+}
+
+/* ── Top row: labels + grip ──────────────────────────────── */
+.task-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-1);
+}
+
+.task-card__labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  flex: 1;
+}
+
+/* Drag handle — hidden by default, appears on hover */
+.task-card__grip {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-neutral-300);
+  opacity: 0;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
+  margin-left: var(--spacing-1);
+  cursor: grab;
+}
+
+.task-card:hover .task-card__grip {
+  opacity: 1;
+}
+
+.task-card__grip:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-500);
+}
+
+/* ── Title ───────────────────────────────────────────────── */
+.task-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+  line-height: var(--line-height-normal);
+  word-break: break-word;
+}
+
+/* ── Description ─────────────────────────────────────────── */
+.task-card__description {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+  line-height: var(--line-height-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-2);
+  border-left: 2px solid var(--color-neutral-200);
+  margin: 0 calc(-1 * var(--spacing-1));
+  padding-left: var(--spacing-2);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.task-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-1);
+  padding-top: var(--spacing-2);
+  border-top: 1px solid var(--color-neutral-100);
+}
+
+.task-card__due-date {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-500);
+  background-color: var(--color-neutral-100);
+  padding: 2px var(--spacing-2);
+  border-radius: var(--radius-full);
+}
+
+/* ── Assignee ─────────────────────────────────────────────── */
+.task-card__assignee {
+  margin-left: auto;
+}
+
+.task-card__assignee-empty {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  border: 1.5px dashed var(--color-neutral-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-400);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.task-card:hover .task-card__assignee-empty {
+  border-color: var(--color-neutral-400);
+  color: var(--color-neutral-500);
+}
