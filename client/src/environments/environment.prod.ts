@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://PLACEHOLDER_URL_HERE/api'
+  apiUrl: 'https://taskboard-server-qm8t.onrender.com/api'
 };
